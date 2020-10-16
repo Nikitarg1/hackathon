@@ -75,7 +75,7 @@
         elevate-on-scroll
         :color="this.$vuetify.theme.dark ? backgroundDark : background">
 
-      <v-icon x-large class="pr-3">mdi-book-open-page-variant</v-icon>
+      <v-icon x-large class="px-6">mdi-book-open-page-variant</v-icon>
       <v-toolbar-title v-if="this.$vuetify.breakpoint.smAndUp" class="logo customText--text justify-center align-center">Мой дневник</v-toolbar-title>
 
       <v-spacer></v-spacer>
