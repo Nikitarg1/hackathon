@@ -25,7 +25,7 @@
         <transition name="slideLeftItem" enter-active-class="animated slideInRight navItemOne"
                     leave-active-class="animated slideOutLeft">
           <v-list-item class="mb-2" v-show="drawer">
-            <h1 class="text-3xl font-weight-bold logoBlack--text">Меню</h1>
+            <h1 class="customText--text">Меню</h1>
           </v-list-item>
         </transition>
       </template>
@@ -33,7 +33,7 @@
           nav
           dense>
         <v-list-item-group>
-          <router-link :to="'/' + item.link" v-for="item in liItems" :key="item.name" style="color: inherit;">
+          <router-link :to="'/' + item.link" v-for="item in liItems" :key="item.name" style="text-decoration: none">
             <transition name="slideLeftItem" :enter-active-class="item.class"
                         leave-active-class="animated slideOutLeft">
               <v-list-item v-show="drawer">
@@ -75,14 +75,15 @@
         elevate-on-scroll
         :color="this.$vuetify.theme.dark ? backgroundDark : background">
 
-      <v-toolbar-title class="logo logoBlack--text">Rubble</v-toolbar-title>
+      <v-icon x-large class="pr-3">mdi-book-open-page-variant</v-icon>
+      <v-toolbar-title v-if="this.$vuetify.breakpoint.smAndUp" class="logo customText--text justify-center align-center">Мой дневник</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
       <ul class="navigation d-none d-sm-flex">
         <li v-for="item in liItems"
             :key="item.name">
-          <a :href="'/' + item.link" class="logoBlack--text" :style="item.style">{{ item.name }}</a>
+          <a :href="'/' + item.link" class="customText--text" :style="item.style">{{ item.name }}</a>
         </li>
       </ul>
 
@@ -90,7 +91,7 @@
         <v-icon>{{ this.$vuetify.theme.dark ? 'mdi-brightness-5' : 'mdi-brightness-4' }}</v-icon>
       </v-btn>
 
-      <v-btn text @click="setLogin" class="d-none d-sm-flex">
+      <v-btn text @click="setLogin" class="d-none d-sm-flex customText--text">
         {{ isLogin ? this.user.email : 'Войти'}}
       </v-btn>
 
@@ -108,7 +109,7 @@
 
     </v-app-bar>
 
-    <v-app-bar fixed :class="{  'isScroll' : letsScroll}" :color="letsScroll ? 'transparent' : (this.$vuetify.theme.dark ? 'rgb(64,180,173)' : 'rgb(80, 225, 216)')" style="z-index: 4;" flat></v-app-bar>
+    <v-app-bar fixed :class="{  'isScroll' : letsScroll}" :color="letsScroll ? 'transparent' : (this.$vuetify.theme.dark ? 'rgb(103,103,134)' : 'rgb(204,204,255)')" style="z-index: 4;" flat></v-app-bar>
 
     <div class="d-block d-sm-none" style="width: 25px; height: 100%; position: fixed; z-index: 3; right: 0;"
          v-touch="{left: () => drawer = true}"
@@ -132,16 +133,16 @@ export default {
     letsScroll: false,
     liItems: [
       {link: '', name: 'Главная', icon: 'mdi-home', class: 'navItemTwo animated slideInRight'},
-      {link: 'one', name: 'Мой дом', icon: 'mdi-book-multiple', class: 'navItemTree animated slideInRight'},
-      {link: 'buyers', name: 'Покупатели', icon: 'mdi-account-multiple', class: 'navItemFive animated slideInRight', style: 'margin-right: 16px;'}
+      {link: 'people', name: 'Люди', icon: 'mdi-book-multiple', class: 'navItemTree animated slideInRight', style: 'margin-right: 16px;'},
     ]
   }),
   computed: {
     background: function () {
-      return 'rgba(80, 225, 216, .7)'
+      return 'rgba(204,204,255, .7)'
+      // rgba(80, 225, 216, .7)
     },
     backgroundDark: function () {
-      return 'rgba(64,180,173, .7)'
+      return 'rgba(204,204,255, .7)'
     },
   },
   mounted() {

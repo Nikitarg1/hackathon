@@ -9,9 +9,9 @@ const routes = [
     component: () => import('../components/main/MainPage')
   },
   {
-    path: '/one',
-    name: 'oneHelloWorld',
-    component: () => import('../components/HelloWorld')
+    path: '/people',
+    name: 'people',
+    component: () => import('../components/people/People')
   },
   {
     path: '/login',
