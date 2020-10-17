@@ -133,7 +133,7 @@ export default {
         firebase.auth().createUserWithEmailAndPassword(this.form.login, this.form.password)
             .then(() => {
               this.$emit('regSuccess', 'sign-in');
-              // this.$router.push('/')
+              this.$router.push('/')
             })
             .catch(error => {
               this.errors.login.errorMessage = error.message
