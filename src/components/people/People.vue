@@ -9,8 +9,7 @@
 
       <div class="container" style="padding-top: 64px; max-width: 1280px;">
         <div class="col-lg-6 col-md-8 col-sm-8 pl-md-16 pl-sm-5 pt-16 customText--text">
-          <h1 class="mb-6 text-h2 font-weight-bold">Мы стираем
-            границы!</h1>
+          <h1 class="mb-6 text-h2 font-weight-bold">123</h1>
           <p class="" style="font-size: 1.125rem">
             Узнавайте всю актуальную информацию о стройке вашей квартиры самым удобным способом с помощью Rubble и
             Яндекс Алисы.
